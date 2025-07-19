@@ -295,6 +295,7 @@ if (dateTo.getDate() == null) {
     // Tampilkan total penjualan & qty terjual
     lblTotalPenjualan.setText("Rp " + totalPenjualan);
     lblTotalQty.setText(String.valueOf(totalQty));
+    lblTotalUntung.setText("Rp " + totalPenjualan);
 }
 
 

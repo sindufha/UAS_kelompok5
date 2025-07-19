@@ -260,6 +260,8 @@ private void loaddataUser(){
             JOptionPane.showMessageDialog(this, "Minimal harus ada 1 user. Tidak bisa hapus.");
         return;
         }
+        
+       
         //Hapus Dari database
         String sql = "DELETE FROM user where id_user = ?";
         PreparedStatement ps = con.prepareStatement(sql);

@@ -14,17 +14,17 @@ import javax.swing.JOptionPane;
  */
 public class userpopup extends javax.swing.JDialog {
 
-    public userpopup(java.awt.Frame parent, boolean modal) {
+    public userpopup(java.awt.Frame parent, boolean modal,String username) {
         super(parent, modal);
         initComponents();
         int arc = 12; // radius lengkungan
         setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), arc, arc));
         RoundedPanel panel = new RoundedPanel(20);
-        
-        
+        namaUser.setText(username); 
+        namaUser.revalidate();
+        namaUser.repaint();
         
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -79,12 +79,12 @@ public class userpopup extends javax.swing.JDialog {
             panelPopup1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelPopup1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(namaUser)
-                .addGap(26, 26, 26)
+                .addGap(31, 31, 31)
                 .addComponent(bLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addGap(37, 37, 37))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -141,7 +141,7 @@ public class userpopup extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                userpopup dialog = new userpopup(new javax.swing.JFrame(), true);
+                userpopup dialog = new userpopup(new javax.swing.JFrame(), true,"");
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {

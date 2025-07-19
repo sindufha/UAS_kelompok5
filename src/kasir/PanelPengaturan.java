@@ -281,13 +281,13 @@ public void loadDataPengguna() {
             }
            try {
     Connection con = koneksi.konek();
-    String sql = "UPDATE identitas SET namaPemilik=?, alamat=?, no_hp=?, email=? WHERE id=1";
+    String sql = "UPDATE identitas SET namaPemilik=?, alamat=?, no_hp=?, email=? WHERE namaPemilik=? ";
     PreparedStatement ps = con.prepareStatement(sql);
     ps.setString(1, nama);
-    ps.setString(2, alamat + ", Ds." + desa + ", Kec." + kecamatan + ", Kab." + kabupaten + ", " + provinsi);
+    ps.setString(2, alamat + " " + desa + " " + kecamatan + " " + kabupaten + " " + provinsi);
     ps.setString(3, noHP);
     ps.setString(4, email);
-
+    ps.setString(5, nama);
     int result = ps.executeUpdate();
     ps.close();
     con.close();

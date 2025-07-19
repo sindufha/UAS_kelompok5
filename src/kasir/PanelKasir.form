@@ -44,7 +44,7 @@
               </Group>
               <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
-          <Component id="jPanel2" alignment="0" pref="935" max="32767" attributes="0"/>
+          <Component id="jPanel2" alignment="0" pref="939" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -218,7 +218,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Rp. 57.000"/>
+        <Property name="text" type="java.lang.String" value="Rp. 0"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

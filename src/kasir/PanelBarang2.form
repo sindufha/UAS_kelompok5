@@ -63,7 +63,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="Chooser" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                                  <Component id="fotopath" min="-2" max="-2" attributes="0"/>
+                                  <Component id="fotopath" min="-2" pref="301" max="-2" attributes="0"/>
                               </Group>
                               <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="tNamaBarang" pref="255" max="32767" attributes="0"/>
@@ -72,9 +72,12 @@
                               </Group>
                           </Group>
                       </Group>
-                      <Component id="bSubmit" alignment="1" min="-2" pref="120" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="bSubmit" min="-2" pref="120" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="249" max="32767" attributes="0"/>
+                  <EmptySpace pref="93" max="32767" attributes="0"/>
               </Group>
               <Component id="jPanel2" alignment="1" max="32767" attributes="0"/>
               <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>

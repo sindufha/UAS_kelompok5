@@ -14,12 +14,6 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-
-/**
- *
- * @author MyBook Hype AMD
- */
-
 public class login extends javax.swing.JFrame {
 
     /**
@@ -27,11 +21,9 @@ public class login extends javax.swing.JFrame {
      */
     public login() {
         initComponents();
-        
+        tPassword.setText("Password");          // tampilkan placeholder
+        tPassword.setEchoChar((char)0);
     }
-
-    
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,7 +39,6 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(1280, 759));
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
         jPanel1.setPreferredSize(new java.awt.Dimension(500, 400));
@@ -78,6 +69,11 @@ public class login extends javax.swing.JFrame {
         });
 
         tPassword.setText("password");
+        tPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                tPasswordFocusGained(evt);
+            }
+        });
         tPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 tPasswordMouseClicked(evt);
@@ -172,8 +168,7 @@ public class login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bloginActionPerformed
-        // TODO add your handling code here:
-        String username = tUsername.getText();
+      String username = tUsername.getText();
         
         String password = tPassword.getText();
         
@@ -189,7 +184,7 @@ public class login extends javax.swing.JFrame {
             if(rs.next()){
                 dispose();
                 
-                String nama = rs.getString("nama"); // Ambil nama dari database
+                String nama = rs.getString("nama"); 
                 new MenuUtama(nama).setVisible(true);
             }else{
                 JOptionPane.showMessageDialog(null, "username/password salah"); 
@@ -204,20 +199,27 @@ public class login extends javax.swing.JFrame {
     }//GEN-LAST:event_bloginActionPerformed
 
     private void tUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tUsernameMouseClicked
-        // TODO add your handling code here:
-        tUsername.setText("");
-        
+        if (String.valueOf(tUsername.getText()).equals("Username")){
+          tUsername.setText("");  
+        }
     }//GEN-LAST:event_tUsernameMouseClicked
 
     private void tPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tPasswordMouseClicked
-        // TODO add your handling code here:
-        tPassword.setText("");
+
     }//GEN-LAST:event_tPasswordMouseClicked
 
     private void bCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bCloseMouseClicked
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_bCloseMouseClicked
+
+    private void tPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tPasswordFocusGained
+        // TODO add your handling code here:
+        if (String.valueOf(tPassword.getPassword()).equals("Password")){
+        tPassword.setText("");
+        tPassword.setEchoChar('•');
+        }
+    }//GEN-LAST:event_tPasswordFocusGained
 
  
     public static void main(String args[]) {

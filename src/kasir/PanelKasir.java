@@ -139,7 +139,7 @@ public class PanelKasir extends javax.swing.JPanel {
         jLabel12.setText("Sub Total");
 
         labelSubtotal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        labelSubtotal.setText("Rp. 57.000");
+        labelSubtotal.setText("Rp. 0");
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -169,7 +169,7 @@ public class PanelKasir extends javax.swing.JPanel {
                             .addComponent(bBayar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(35, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 935, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 939, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,14 +467,14 @@ public void loadBarangKePanelList() {
         filterBarang(keyword);
     }//GEN-LAST:event_tCariKeyReleased
 private void filterBarang(String keyword) {
-    keyword = keyword.toLowerCase().trim(); // biar gak case sensitive
+    keyword = keyword.toLowerCase().trim();
 
     for (Component comp : panelList.getComponents()) {
         if (comp instanceof JPanel barangPanel) {
 
             String namaBarang = "";
 
-            // Cari label nama barang dari bottomPanel
+            
             for (Component subComp : barangPanel.getComponents()) {
                 if (subComp instanceof JPanel bottomPanel) {
                     for (Component labelComp : bottomPanel.getComponents()) {

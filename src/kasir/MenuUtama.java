@@ -9,7 +9,7 @@ import java.awt.Color;
 import java.awt.Point;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
+import java.sql.Connection;
 /**
  *
  * @author MyBook Hype AMD
@@ -19,14 +19,17 @@ public class MenuUtama extends javax.swing.JFrame {
     /**
      * Creates new form MenuUtama
      */
+    private String username;
     public MenuUtama(String username) {
         initComponents();
         labelUser.setText( username);
-       
+        tampilkanDashboard();
+        this.username = username;
+        
     }
         
-    public MenuUtama() {
-        initComponents();
+    public void tampilkanDashboard() {
+
         setAppIcon();
         dinarmart.setIconTextGap(25);
         setExtendedState(MAXIMIZED_BOTH);
@@ -371,6 +374,7 @@ public class MenuUtama extends javax.swing.JFrame {
         content.revalidate();
     }//GEN-LAST:event_bDashboardActionPerformed
     private userpopup popup = null;
+
     private void profilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profilMouseClicked
         //popupProfil.show(profil, 0, profil.getHeight());//           
         boolean close = true;
@@ -380,7 +384,7 @@ public class MenuUtama extends javax.swing.JFrame {
             popup.dispose();
             popup = null;
         } else {
-            popup = new userpopup(MenuUtama.this, false);
+            popup = new userpopup(MenuUtama.this, false,username);
             Point lokasi = profil.getLocationOnScreen(); 
             int x = lokasi.x + profil.getWidth() - 250; 
             int y = lokasi.y + profil.getHeight(); 
@@ -490,6 +494,7 @@ public class MenuUtama extends javax.swing.JFrame {
         content.revalidate();
     }//GEN-LAST:event_bKasirActionPerformed
 
+
     /**
      * @param args the command line arguments
      */
@@ -504,7 +509,7 @@ public class MenuUtama extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuUtama().setVisible(true);
+                new MenuUtama("").setVisible(true);
                 
             }
         });
